@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+  <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+      <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/profile_pic"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:src="@drawable/ic_launcher_background"
+        app:civ_shadow="true" />
+
+      <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/profile_pic"
+        android:text="--"
+        android:textColor="@android:color/black" />
+
+      <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name"
+        android:layout_alignStart="@id/name"
+        android:layout_marginTop="5dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="--"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+      <RelativeLayout
+        android:id="@+id/item_expand_lyt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:visibility="visible"
+        android:layout_alignStart="@id/title">
+
+        <TextView
+          android:id="@+id/desc"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="5dp"
+          android:ellipsize="end"
+          android:maxLines="2"
+          android:text="----"
+          android:textColor="@android:color/darker_gray"
+          android:textSize="18sp" />
+
+          <ImageView
+            android:id="@+id/shape"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:src="@drawable/circular_shape"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/desc"/>
+
+        <TextView
+          android:id="@+id/lang"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="----"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="10dp"
+          android:layout_below="@id/desc"
+          android:layout_toEndOf="@id/shape"/>
+
+        <ImageView
+          android:id="@+id/star"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_toEndOf="@id/lang"
+          android:layout_marginStart="15dp"
+          android:layout_alignTop="@id/lang"
+          android:layout_alignBottom="@id/lang"
+          android:src="@drawable/star_yellow_16"
+          android:layout_below="@id/desc"/>
+
+        <TextView
+          android:id="@+id/star_count"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="--"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="10dp"
+          android:layout_below="@id/desc"
+          android:layout_toEndOf="@id/star"/>
+
+        <ImageView
+          android:id="@+id/fork"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_toEndOf="@id/star_count"
+          android:layout_marginStart="15dp"
+          android:layout_alignTop="@id/star_count"
+          android:layout_alignBottom="@id/star_count"
+          android:src="@drawable/fork_black_16"
+          android:layout_below="@id/desc"/>
+
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="--"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="10dp"
+          android:layout_below="@id/desc"
+          android:layout_toEndOf="@id/fork"/>
+
+      </RelativeLayout>
+
+    </RelativeLayout>
+
+  </RelativeLayout>
+
+</layout>
