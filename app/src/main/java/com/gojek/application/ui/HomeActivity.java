@@ -1,10 +1,12 @@
-package com.gojek.application;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.gojek.application.ui;
 
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.gojek.application.R;
+
+public class HomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
