@@ -1,5 +1,7 @@
 package com.gojek.application.di.module;
 
+import android.app.Application;
+
 import androidx.lifecycle.ViewModel;
 
 import com.gojek.application.base.ViewModelFactory;
@@ -24,6 +26,19 @@ import dagger.multibindings.IntoMap;
 @Module
 public class AppModule {
 
+    private Application application;
+
+    public AppModule(Application application) {
+        this.application = application;
+    }
+
+    @Singleton
+    @Provides
+    public Application provideApplication() {
+        return application;
+    }
+
+
     @Singleton
     @Provides
     public Repository provideRepository(Api api) {
@@ -38,15 +53,16 @@ public class AppModule {
     }
 
     @Provides
-    ViewModelFactory provideViewModelFactory(Map<Class<? extends ViewModel>, Provider<ViewModel>> value){
-          return  new ViewModelFactory(value);
+    ViewModelFactory provideViewModelFactory(Map<Class<? extends ViewModel>, Provider<ViewModel>> value) {
+        return new ViewModelFactory(value);
     }
 
     @Provides
     @IntoMap
     @ViewModelKey(HomeViewModel.class)
-    public ViewModel provideViewModel(Repository repository){
+    public ViewModel provideViewModel(Repository repository) {
         return new HomeViewModel(repository);
     }
+
 
 }

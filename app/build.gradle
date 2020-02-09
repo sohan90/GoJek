@@ -46,6 +46,8 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.0.0'
     testImplementation 'org.mockito:mockito-core:1.10.19'
 
     //network
@@ -66,5 +68,17 @@ dependencies {
 
     //circular imageview
     implementation 'com.mikhaellopez:circularimageview:4.1.1'
+
+    //recyclerview
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    //network utils
+    implementation  'com.blankj:utilcode:1.9.2'
+
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+
+    //shimmer
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
 
 }

@@ -2,7 +2,7 @@ package com.gojek.application;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -14,4 +14,13 @@ public class ExampleUnitTest {
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }
+
+    @Test
+    public void testing(){
+        int i = 456;
+        int j = i % 10;
+        assertEquals(6, j);
+    }
+
+
 }

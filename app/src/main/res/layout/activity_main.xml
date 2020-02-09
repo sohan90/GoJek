@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
   <data>
 
@@ -9,24 +9,90 @@
       type="com.gojek.application.viewmodel.HomeViewModel" />
   </data>
 
-  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ui.HomeActivity">
 
+
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
       android:id="@+id/refresh"
       android:layout_width="match_parent"
-      android:layout_height="wrap_content">
+      android:layout_height="wrap_content"
+      android:visibility="gone">
 
       <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:listitem="@layout/item_trending" />
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-  </LinearLayout>
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+      android:id="@+id/shimmer"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:visibility="visible"
+      app:shimmer_auto_start="true">
+
+      <include layout="@layout/item_shimmer_container" />
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+    <RelativeLayout
+      android:id="@+id/no_network_lyt"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_gravity="center"
+      android:visibility="gone">
+
+      <ImageView
+        android:id="@+id/img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/nointernet_connection" />
+
+      <TextView
+        android:id="@+id/error_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img"
+        android:layout_centerInParent="true"
+        android:text="@string/something_went_wrong"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+      <TextView
+        android:id="@+id/error_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/error_title"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="5dp"
+        android:text="@string/error_msg"
+        android:textColor="@android:color/darker_gray" />
+
+
+      <Button
+        android:id="@+id/retry_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:background="@drawable/round_edge_shape"
+        android:text="@string/retry"
+        android:textAllCaps="true"
+        android:textColor="@android:color/holo_green_dark" />
+
+    </RelativeLayout>
+
+  </FrameLayout>
 
 </layout>

@@ -1,3 +1,7 @@
 <resources>
   <string name="app_name">GoJek</string>
+  <string name="something_went_wrong">Something went wrong...</string>
+  <string name="error_msg">An alien is probably blocking your signal.</string>
+  <string name="retry">Retry</string>
+  <string name="settings">settings</string>
 </resources>
