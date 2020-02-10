@@ -2,6 +2,7 @@ package com.gojek.application.model;
 
 public class TrendingResponse{
 
+    public static final String isEMPTY = "";
     private String author;
     private String name;
     private String avatar;
