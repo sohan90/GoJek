@@ -28,7 +28,7 @@ public class HomeViewModel extends BaseViewModel {
     public LiveData<List<TrendingResponse>> getListMutableLiveData() {
         if (listMutableLiveData == null) {
             listMutableLiveData = new MutableLiveData<>();
-            getTrendingGitHub();
+            //getTrendingGitHub();
         }
         return listMutableLiveData;
     }

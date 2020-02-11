@@ -41,6 +41,7 @@ public final class HomeActivity extends BaseActivity implements SwipeRefreshLayo
         bindMutableObserver();
         initUi();
         initListener();
+        viewModel.getTrendingGitHub();// api call
     }
 
     private void inject() {
